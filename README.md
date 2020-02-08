@@ -1,2 +1,2 @@
-# mnist_nn
+# Mnist_nn
 Hello World of Neural Nets
