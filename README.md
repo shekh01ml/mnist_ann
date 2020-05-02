@@ -1,2 +1,4 @@
-# Mnist with Artificial Neural Nets
-Hello World of Neural Nets
+# Mnist with Artificial Neural Nets (ANN)
+Hello World of Neural Nets 
+
+
