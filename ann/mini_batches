@@ -1,0 +1,8 @@
+def mini_batches(X,Y,batch_size):
+    batches = []
+    batch_labels = []
+    n = math.floor(X.shape[0]/batch_size)
+    for i in range(0,X.shape[0],batch_size):
+        batches.append(X[i:i+batch_size])
+        batch_labels.append(Y[i:i+batch_size])
+    return batches,batch_labels
