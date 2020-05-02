@@ -1,0 +1,35 @@
+def one_hot(Y,class_size):
+    Y_enc = np.zeros((Y.shape[0],class_size))
+    for index in range(Y.shape[0]):
+        Y_enc[index,Y[index]] = 1
+    return Y_enc
+
+def train(batches,layers,weights,biases,batch_labels,lr):
+    #layers = create(batches[0].shape[0])
+    ff = Forward_Feed()
+    for index in range(len(batches)):
+        #if(index==len(batches)-1):
+         #   layers = create(batches[-1].shape[0])
+        layers[0] = (batches[index]/255)+1e-2
+        labels = batch_labels[index]
+        loss = ff.feed_forward(layers,weights,biases,labels)
+        print(loss)
+        bp = Back_Propagate()
+        bp.prop_back(layers,weights,biases,labels,lr)
+
+def predict(batches,layers,weights,biases,batch_labels):
+    #layers = create(batches[0].shape[0])
+    ff = Forward_Feed()
+    prediction = []
+    for index in range(len(batches)):
+        #if(index==len(batches)-1):
+         #   layers = create(batches[-1].shape[0])
+        layers[0] = (batches[index]/255)+1e-3
+        labels = batch_labels[index]
+        loss = ff.feed_forward(layers,weights,biases,labels)
+        for i in range(layers[-1].shape[0]):
+            _max = np.max(layers[-1][i])
+            for j in range(layers[-1].shape[1]):
+                if (layers[-1][i,j]==_max):
+                    prediction.append(j)
+    return prediction
