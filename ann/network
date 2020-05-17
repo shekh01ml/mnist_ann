@@ -7,8 +7,8 @@ class Network:
         self.layers.append(layer)
     def init_variables(self,n,l,vtype):
         if(vtype=="weight"):
-            #variables = np.random.uniform(-np.sqrt(6)/np.sqrt(250+10),np.sqrt(6)/np.sqrt(250+10),size=(n,l))
-            variables = np.random.normal(loc=0.0, scale = np.sqrt(2/(in_size+class_size)),size = (n,l))
+            np.random.seed(200)
+            variables = np.random.normal(loc=0.0, scale = np.sqrt(2/(n+l)),size = (n,l))
             self.weights.append(variables)
         elif(vtype=="bias"):
             variables = np.zeros((n,l))
