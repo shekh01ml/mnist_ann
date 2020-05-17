@@ -30,8 +30,6 @@ _Y_enc = one_hot(_Y,class_size)
 batch_size = 10
 batches,batch_labels = mini_batches(X,Y_enc,batch_size=batch_size)
 _batches,_batch_labels = mini_batches(_X,_Y_enc,batch_size=batch_size)
-d = batches.pop(-1)
-_d = _batches.pop(-1)
 
 net = Network()
 net.add_layers(batch_size,in_size)
@@ -54,8 +52,8 @@ for epoch in range(epochs):
     train(batches,net.layers,net.weights,net.biases,batch_labels,lr)
     prediction = predict(batches,net.layers,net.weights,net.biases,batch_labels)
     _prediction = predict(_batches,net.layers,net.weights,net.biases,_batch_labels)
-    train_acc = (prediction==Y[0:Y.shape[0]-len(d)]).sum()/X.shape[0]
-    test_acc = (_prediction==_Y[0:_Y.shape[0]-len(_d)]).sum()/_X.shape[0]
+    train_acc = (prediction==Y[0:Y.shape[0]]).sum()/X.shape[0]
+    test_acc = (_prediction==_Y[0:_Y.shape[0]]).sum()/_X.shape[0]
     print(train_acc)
     print(test_acc)
     train_accuracy.append(train_acc)
