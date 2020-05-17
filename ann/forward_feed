@@ -16,8 +16,5 @@ class Forward_Feed:
                 self.relu(layers[index+1])
             else:
                 layers[-1] = self.softmax(layers[index+1])
-        #print("layers[-1]",layers[-1])
-        #print("layers[-2]",layers[-2])
-        #print("layers[-3]",layers[-3])
         loss = np.mean(self.cross_entropy(layers,labels))
         return loss
