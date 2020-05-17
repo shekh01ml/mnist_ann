@@ -5,8 +5,10 @@ import copy
 import matplotlib.pyplot as plt
 
 X = pd.read_csv("mnist/mnist_train.csv")
+np.random.seed(200)
+np.random.shuffle(np.asarray(X))
 Y = X["label"]
-X = X.drop(["label"],axis=1)
+X = X.drop("label",axis=1)
 X = np.asarray(X)
 Y = np.asarray(Y)
 
@@ -18,20 +20,18 @@ _Y = np.asarray(_Y)
 
 global in_size,hidden1_size,hidden2_size,class_size
 in_size= X.shape[1]
-hidden1_size = 250
-hidden2_size = 250
+hidden1_size = 200
+hidden2_size = 200
 class_size = 10
 
 Y_enc = one_hot(Y,class_size)
 _Y_enc = one_hot(_Y,class_size)
 
-batch_size = 32
+batch_size = 10
 batches,batch_labels = mini_batches(X,Y_enc,batch_size=batch_size)
 _batches,_batch_labels = mini_batches(_X,_Y_enc,batch_size=batch_size)
 d = batches.pop(-1)
 _d = _batches.pop(-1)
-#plt.imshow(batches[0][0].reshape(28,28))
-#print(batch_labels[0][0])
 
 net = Network()
 net.add_layers(batch_size,in_size)
@@ -60,4 +60,4 @@ for epoch in range(epochs):
     print(test_acc)
     train_accuracy.append(train_acc)
     test_accuracy.append(test_acc)
-    input("Press Enter: ")
+
