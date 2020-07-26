@@ -1,2 +1,21 @@
 # MNIST Classification with Artificial Neural Nets
-Hello World of Neural Nets
+
+# About
+
+This is an implementation of Artificial Neural Networks for classifying the MNIST dataset in Python, using numpy and matplotlib libraries. 
+The motivation for implementing it from scratch was to learn more about the maths behind neural networks(and machine learning in general),
+rather than it's application in real world problems.
+
+# General Info
+
+Cost Function used-
+* Cross-entropy Loss
+
+Activation Functions used-
+* Hidden Layer: ReLu
+* Output Layer: Softmax
+
+Weight and Bias Initialization used-
+* Weights: Random numbers from a normal distribution 
+* Bias: Zeros
+
