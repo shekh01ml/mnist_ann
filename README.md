@@ -19,3 +19,4 @@ Weight and Bias Initialization used-
 * Weights: Random numbers from a normal distribution 
 * Bias: Zeros
 
+![training_acc](https://user-images.githubusercontent.com/60123966/88475537-61986f00-cf4e-11ea-816a-2e05294491e1.JPG)
