@@ -24,3 +24,4 @@ Weight and Bias Initialization used-
 * Accuracy achieved for different learning rates
 
   ![training_acc](https://user-images.githubusercontent.com/60123966/88475537-61986f00-cf4e-11ea-816a-2e05294491e1.JPG)
+  ![test_acc](https://user-images.githubusercontent.com/60123966/88534537-eb673b80-d025-11ea-971a-fffeb8dff848.JPG)
