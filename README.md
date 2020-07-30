@@ -3,7 +3,7 @@
 # About
 
 This is an implementation of Artificial Neural Networks for classifying the MNIST dataset in Python, using numpy and matplotlib libraries. 
-The motivation for implementing it from scratch was to learn more about the maths behind neural networks(and machine learning in general),
+The motivation for implementing it from scratch was to learn more about the maths behind neural networks (and machine learning in general),
 rather than it's application in real world problems.
 
 # General Info
